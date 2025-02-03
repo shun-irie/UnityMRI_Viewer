@@ -17,8 +17,14 @@ public int x, y, zはそれぞれMNI座標を意味し、それぞれの値を�
 ### LineControler.cs
 各断面におけるx,y,zの位置を線で表しています。線はRawImageで作っています。
 これは他のアプリとの連携方法についての説明のために作っています。
-'''cs
+```cs
 public class LineControler : MonoBehaviour
 {
     MRI_controller mri;//これによりMRI_controllerでのpublic変数にアクセス可能になります
-'''
+```
+ここで、mri.xを用いればMRI_controllerのxにアクセスできます。
+つまり、他のプログラムで、
+```cs
+mri.x = int new_x; // MNIを更新
+```
+してあげれば、動的にMRI画像を更新できるようになります
